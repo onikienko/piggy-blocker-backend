@@ -1,0 +1,47 @@
+POST http://localhost:5000/addnotruvideos
+Content-Type: application/json
+
+{
+    "videos": [
+        {
+            "uid": "useridissocool",
+            "channelName": "hel",
+            "link": "link",
+            "reason": "no reason sadly",
+            "reasonDetails": null,
+            "timeWhenBlocked": 1578175817587185,
+            "title": "Мій мікс"
+        },
+        {
+            "uid": "second vid uid))))))",
+            "channelName": "helm",
+            "link": "link",
+            "reason": "noCyrillic!!!!!",
+            "reasonDetails": "ru",
+            "timeWhenBlocked": 157817581758185,
+            "title": "Мій міксик"
+        }
+    ]
+}
+
+### wrong request
+GET http://localhost:5000/addik
+
+### add videos with wrong video data
+POST http://localhost:5000/addnotruvideos
+Content-Type: application/json
+
+{
+    "videos": [
+        {
+            "uid": "useridissocool"
+        },
+        {
+            "uid": "second vid uid))))))",
+            "channelName": "helm",
+            "link": "link",
+            "reason": "noCyrillic!!!!!",
+            "title": "Мій міксик"
+        }
+    ]
+}
