@@ -45,3 +45,10 @@ Content-Type: application/json
         }
     ]
 }
+
+### get not ru videos
+GET http://localhost:5000/getnotruvideos
+
+### get ru videos
+GET http://localhost:5000/getruvideos
+
