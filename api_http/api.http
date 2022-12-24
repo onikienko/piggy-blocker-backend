@@ -1,9 +1,10 @@
-POST http://localhost:5000/addnotruvideos
+POST http://localhost:5000/videos
 Content-Type: application/json
 
 {
     "videos": [
         {
+            "isRu": 0,
             "uid": "useridissocool",
             "channelName": "hel",
             "link": "link",
@@ -13,6 +14,7 @@ Content-Type: application/json
             "title": "Мій мікс"
         },
         {
+            "isRu": 1,
             "uid": "second vid uid))))))",
             "channelName": "helm",
             "link": "link",
@@ -28,7 +30,7 @@ Content-Type: application/json
 GET http://localhost:5000/addik
 
 ### add videos with wrong video data
-POST http://localhost:5000/addnotruvideos
+POST http://localhost:5000/notruvideos
 Content-Type: application/json
 
 {
@@ -46,9 +48,9 @@ Content-Type: application/json
     ]
 }
 
-### get not ru videos
-GET http://localhost:5000/getnotruvideos
+### get videos
+GET http://localhost:5000/videos
 
-### get ru videos
-GET http://localhost:5000/getruvideos
+### test query
+GET http://localhost:5000/videos?page=1&limit=5
 

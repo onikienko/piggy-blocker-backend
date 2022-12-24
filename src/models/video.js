@@ -1,6 +1,10 @@
 const {Schema, model} = require('mongoose');
 
 const VideoSchema = new Schema({
+    isRu: {
+        required: true,
+        type: Number,
+    },
     uid: {
         required: true,
         type: String,
@@ -33,9 +37,5 @@ const VideoSchema = new Schema({
     },
 });
 
-const RuVideoSchema = new Schema(VideoSchema);
-const NotRuVideoSchema = new Schema(VideoSchema);
-
-const RuVideo = model('RuVideo', RuVideoSchema);
-const NotRuVideo = model('NotRuVideo', NotRuVideoSchema);
-module.exports = {RuVideo, NotRuVideo};
+const Video = model('NotRuVideo', VideoSchema);
+module.exports = {Video};
