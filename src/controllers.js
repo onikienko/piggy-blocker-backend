@@ -23,7 +23,7 @@ const addVideosToDb = async (req, res, next) => {
         try {
             await Video.create(video);
         } catch (e) {
-            console.log(e);
+            return next(new HttpError('error adding items to db', e.message));
             // return next(new HttpError('could not add to db(((((((', 404))
         }
     }
