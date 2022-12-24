@@ -22,6 +22,7 @@ app.use((err, req, res, next) => {
     return res.json({messagee: err.message || UNKNOWN_ERROR_MSG});
 });
 
+mongoose.set('strictQuery', false);
 mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     autoIndex: true,
