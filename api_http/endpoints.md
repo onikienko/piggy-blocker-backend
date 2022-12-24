@@ -4,11 +4,7 @@
 
 ## Add array of videos to db
 
-- `POST /addruvideos`
-
-or
-
-- `POST /addnotruvideos`
+- `POST /videos`
 
 With following body:
 
@@ -22,15 +18,24 @@ Where video1 and video2 are such objects:
 
 ```
 {
-    uid: String    (required),
+    isRu: 0 || 1
+    uid: String,
     channelName: String,
-    link: String    (required),
-    reason: String     (required),
+    link: String,
+    reason: String,
     reasonDetails: String,
-    timeWhenBlocked: Number    (required),
-    title: String     (requried)
+    timeWhenBlocked: Number,
+    title: String
 }
 ```
+
+## Get all videos from db
+
+- `GET /videos`
+
+or
+
+- `GET /videos?page=pageNumber&limit=limit` for pagination
 
 
 
