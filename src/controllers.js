@@ -19,7 +19,7 @@ const getVideosFromDb = async (req, res, next) => {
 const addVideosToDb = async (req, res, next) => {
     if (!req.body?.videos?.[0]) return res.status(404).send('no videos data are in request');
     for (let video of req.body.videos) {
-        console.log('!!!', video.title);
+        // console.log('!!!', video.title);
         try {
             await Video.create(video);
         } catch (e) {
