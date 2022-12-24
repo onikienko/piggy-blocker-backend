@@ -3,7 +3,7 @@ const {HttpError} = require('./models/http-error');
 const getVideosFromDb = async (req, res, next) => {
     let page = req?.query?.page;
     let limit = req?.query?.limit;
-    console.log(page, limit);
+    // console.log(page, limit);
     let videos;
     try {
         if (page && limit) {
