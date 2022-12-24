@@ -29,5 +29,5 @@ const VideoSchema = new Schema({
     },
 });
 
-const Video = model('NotRuVideo', VideoSchema);
+const Video = model('Video', VideoSchema);
 module.exports = {Video};
