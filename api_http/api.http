@@ -30,7 +30,7 @@ Content-Type: application/json
 GET http://localhost:5000/addik
 
 ### add videos with wrong video data
-POST http://localhost:5000/notruvideos
+POST http://localhost:5000/videos
 Content-Type: application/json
 
 {
@@ -52,5 +52,5 @@ Content-Type: application/json
 GET http://localhost:5000/videos
 
 ### test query
-GET http://localhost:5000/videos?page=1&limit=5
+GET http://localhost:5000/videos?page=2&limit=5
 
