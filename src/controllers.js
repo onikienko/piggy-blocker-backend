@@ -16,6 +16,14 @@ const getVideosFromDb = async (req, res, next) => {
         return next(new HttpError('error getting items from db', e.message));
     }
 };
+const removeAllVideosFromDb = async (req, res, next) => {
+    try {
+        await Video.deleteMany({});
+        res.status(200).send('Db successfully cleared');
+    } catch (e) {
+        return next(new HttpError('could not remove videos from db', e), 500);
+    }
+};
 const addVideosToDb = async (req, res, next) => {
     if (!req.body?.videos?.[0]) return res.status(404).send('no videos data are in request');
     for (let video of req.body.videos) {
@@ -29,4 +37,4 @@ const addVideosToDb = async (req, res, next) => {
     }
     res.status(200).send('videos successfully added to db');
 };
-module.exports = {getVideosFromDb, addVideosToDb};
+module.exports = {getVideosFromDb, addVideosToDb, removeAllVideosFromDb};
